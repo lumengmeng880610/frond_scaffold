@@ -36,13 +36,15 @@ npm run mock
 
 ## 后台api中间层
 通过修改index.js文件
-    // 后台api
-    proxy: 
-    process.env.npm_config_mock ? 
-      // mock api
-      'http://localhost:7000' : 
-      // 后台api地址修改
-      'http://localhost:9000',
+```
+// 后台api
+proxy: 
+process.env.npm_config_mock ? 
+  // mock api
+  'http://localhost:7000' : 
+  // 后台api地址修改
+  'http://localhost:9000',
+```
 
 ## mock api
 [mock-api-server](https://github.com/maitria/mock-api-server)  
