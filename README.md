@@ -1,7 +1,7 @@
 # 前端与后端协作脚手架
 
 ## 功能
-- css样式文件的热加载
+- css样式文件的热更新
 - html、js文件修改触发浏览器页面自动刷新
 - 后台api中间层
 
@@ -22,7 +22,7 @@
 
 
 npm run mock  
-输入http://127.0.0.1:3000访问
+输入http://127.0.0.1:3000 访问
 
 ## 文件结构目录
     app               前端文件
@@ -37,11 +37,11 @@ npm run mock
 ## 后台api中间层
 通过修改index.js文件
 ```
-// 后台api
+// 后台api地址
 proxy: 
-process.env.npm_config_mock ? 
+  argv.mock ? 
   // mock api
-  'http://localhost:7000' : 
+  'http://localhost:' + mockPort : 
   // 后台api地址修改
   'http://localhost:9000',
 ```
