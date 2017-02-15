@@ -15,6 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.18.8",
-    "mock-api-server": "^0.4.5"
+    "mock-api-server": "^0.4.5",
+    "yargs": "^6.6.0"
   }
 }

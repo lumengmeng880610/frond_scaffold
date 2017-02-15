@@ -1,4 +1,4 @@
-var argv = require('optimist').argv;
+var argv = require('yargs').argv;
 
 // 模拟api服务，前后端协作开发时可删除
 if (argv.mock) {
