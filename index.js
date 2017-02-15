@@ -1,12 +1,6 @@
 // 模拟api服务，前后端协作开发时可删除
 if (process.env.npm_config_mock) {
-  require('child_process').exec('./node_modules/.bin/mock-api-server --port 7000', function(err, stdout, stderr) {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(stdout);
-  });
+  require('./lib/mock_api');
 }
 
 
