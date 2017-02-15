@@ -1,5 +1,7 @@
+var argv = require('optimist').argv;
+
 // 模拟api服务，前后端协作开发时可删除
-if (process.env.npm_config_mock) {
+if (argv.mock) {
   require('./lib/mock_api');
 }
 
@@ -16,7 +18,7 @@ bs.init({
   ],
   // 后台api地址
   proxy: 
-    process.env.npm_config_mock ? 
+    argv.mock ? 
     // mock api
     'http://localhost:7000' : 
     // 后台api地址修改

@@ -12,12 +12,16 @@
 
 ## 使用
     Usage:
-      npm start [--mock]
+      npm <command>
+    Example:
+      npm start
+      npm run mock
+    Command:
+      start       普通模式运行
+      run mock    mock模式运行
 
-    Options:
-      --mock       启动mock api服务
 
-npm start --mock  
+npm run mock  
 输入http://127.0.0.1:3000访问
 
 ## 文件结构目录
