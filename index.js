@@ -1,8 +1,14 @@
 var argv = require('yargs').argv;
 
-// 模拟api服务，前后端协作开发时可删除
+var mockPort = 7000;
+
+// 模拟api服务
 if (argv.mock) {
-  require('./lib/mock_api');
+  //require('./lib/mock_api');
+  require('child_process')
+    .exec(__dirname + '/node_modules/.bin/mock-api-server --port ' + mockPort, function(err, stdout, stderr) {
+      if (err) console.error(err);
+    });
 }
 
 
@@ -20,7 +26,7 @@ bs.init({
   proxy: 
     argv.mock ? 
     // mock api
-    'http://localhost:7000' : 
+    'http://localhost:' + mockPort : 
     // 后台api地址修改
     'http://localhost:9000',
   serveStatic: [ 'app' ]
